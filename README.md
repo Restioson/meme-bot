@@ -34,16 +34,21 @@ If you would like to contribute to this project, fork it, commit your changes, a
 
 # FAQ
 **Help! What is a Discord user API token?**
+
 This is your secret string that you can use to let selfbots send messages and do other things on behalf of you. You will need to give this to the bot so it can a) read messages send to you to listen for commands and b) send memes for you. I won't send this to anyone else, nor read any of your messages, but you can check it out in the [code](https://github.com/Restioson/meme-bot/blob/master/meme-bot.py#L41) if you like.
 
 **How do I get it?**
+
 There is a guide [here](https://www.reddit.com/r/discordapp/comments/5ncwpv/localstorage_missing/dcalpi1/). Thank you to [/u/DJScias](https://www.reddit.com/user/DJScias) for this wonderul short tutorial.
 
 **How do I report a bug?**
+
 The [issue tracker](https://github.com/Restioson/meme-bot/issues).
 
 **I have a suggestion!**
+
 [Create an issue](https://github.com/Restioson/meme-bot/issues) with the [enhancement](https://github.com/Restioson/meme-bot/labels/enhancement) label.
 
 **How does [thing x] work?**
+
 Have you read this page? Have you checked the wiki? If the answer is yes to both, feel free to [create an issue](https://github.com/Restioson/meme-bot/issues/new) with the [question](https://github.com/Restioson/meme-bot/labels/question) tag.
