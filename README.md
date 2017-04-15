@@ -6,10 +6,11 @@ All documentation can be found [here](https://github.com/Restioson/meme-bot/wiki
 
 ## Howto
 ![Howto gif](https://raw.githubusercontent.com/Restioson/meme-bot/master/meme-bot.gif "Demonstration showing how to send memes using the meme bot")
+*Note: the gif is slow due to my internet speed. If your internet is faster, it will send the memes faster.*
 
 # Installation
 1. Install [Python](https://www.python.org/) 3.5 or higher and add it to your `PATH`. On Windows, during the installation you can tick an option to do this.
-2. In a shell or `cmd` window, type in `python --version`. If the output looks something like `Python3...` then you are ok! If the output says that you are running Python 2, make sure you have removed this from your PATH or use an absolute path instead of `python`.
+2. In a shell or `cmd` window, type in `python --version`. If the output looks something like `Python3...` then you are ok! If the output says that you are running Python 2, make sure you have removed this from your `PATH` or use an absolute path instead of `python`.
 > 
 2. Install pip (if not preinstalled) and add it to your `PATH` (or equivalent)
 3. In a shell or `cmd` window, type in `pip3 install discord.py` and press enter
