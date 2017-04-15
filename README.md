@@ -13,12 +13,11 @@ All documentation can be found [here](https://github.com/Restioson/meme-bot/wiki
 > 
 2. Install pip (if not preinstalled) and add it to your `PATH` (or equivalent)
 3. In a shell or `cmd` window, type in `pip3 install discord.py` and press enter
-4. Download Meme-Bot from Github, or if you prefer, clone it with `git`.
-5. Extract it if you downloaded it from github
+4. Download the latest stable release of Meme-Bot from [here](https://github.com/Restioson/meme-bot/releases/latest)
+5. Extract it
 6. Open a shell window
 7. `cd` to where the downloaded folder is
-8. `cd` into the downloaded folder (i.e type `cd meme-bot-master` and press enter)
-8. Type `cd meme-bot-master` and press enter
+8. Type `cd meme-bot-master` and press enter. Do this twice
 9. To run the bot, type in `python meme-bot.py`. The bot will only work if it is running. You can set it up to start on startup if you prefer, but this is outside the domain of this tutorial.
 
 # Compatability
