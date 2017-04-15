@@ -49,5 +49,8 @@ Temporary Items
 # Python
 __pycache__/
 
+# Idea
+.idea/
+
 # Project
 config.json

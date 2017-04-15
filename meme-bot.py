@@ -136,7 +136,7 @@ def load_config():
                       list(itertools.chain(*
                                            [[os.path.join(root, file) for file in files]
                                             for root, subdirectories, files in os.walk(meme_path)]))
-                      if file_name.split(".")[0] in file_types])
+                      if file_name.split(".")[-1] in file_types])
 
     # Save config file
     config["token"] = token
