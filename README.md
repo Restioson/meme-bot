@@ -6,6 +6,7 @@ All documentation can be found [here](https://github.com/Restioson/meme-bot/wiki
 
 ## Howto
 ![Howto gif](https://raw.githubusercontent.com/Restioson/meme-bot/master/meme-bot.gif "Demonstration showing how to send memes using the meme bot")
+
 *Note: the gif is slow due to my internet speed. If your internet is faster, it will send the memes faster.*
 
 # Installation
