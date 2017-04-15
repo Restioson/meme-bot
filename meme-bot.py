@@ -63,12 +63,17 @@ async def on_message(message: discord.Message):
         meme = " ".join(message.content.split(" ")[1:])
 
         # Find matching memes
-        matching = [meme_file_path for meme_file_path in memes if meme.replace("_", " ") in meme_file_path]
+        matching = [(meme_file_path, meme_matches(meme.replace("_", " "), meme_file_path.split(os.path.sep)[-1]))
+                    for meme_file_path in memes]
+
+        # Sort matching
+        matching.sort(key=lambda x: x[1])
+        matching.reverse()
 
         # Send first matching meme (if exists)
-        if len(matching) > 0:
-            print("Sending meme ", matching[0].split(os.path.sep)[-1])
-            await client.send_file(message.channel, matching[0])
+        if len(matching) > 0 and matching[0][1] != 0:
+            print("Sending meme", matching[0][0].split(os.path.sep)[-1])
+            await client.send_file(message.channel, matching[0][0])
 
         else:
             print("No matching memes")
@@ -77,7 +82,10 @@ async def on_message(message: discord.Message):
         await client.delete_message(message)
 
     # Check command
-    elif message.content.split(" ")[0] == "reload":
+    elif message.content.split(" ")[0] == "~reload":
+
+        # Print
+        print("Reloading...")
 
         # Reload config
         reload_config()
@@ -89,6 +97,34 @@ async def on_message(message: discord.Message):
                                                 for root, subdirectories, files in os.walk(meme_path)]))
                           if file_name.split(".")[0] in file_types])
 
+        # Delete command message
+        await client.delete_message(message)
+
+        # Print
+        print("... reloaded")
+
+
+# Check if matching meme
+def meme_matches(query, meme_file_name):
+
+    # Tokens
+    tokens_query = query.split(" ")
+    tokens_meme = "".join(meme_file_name.split(".")[:-1]).split(" ")
+
+    # How many same tokens
+    same = 0.0
+
+    # Loop
+    for token_query in tokens_query:
+
+        for token_meme in tokens_meme:
+
+            if token_query == token_meme:
+
+                same += 1.0
+
+    # Return similarity score
+    return same / float(len(tokens_meme))
 
 # Reload config
 def load_config():
@@ -124,7 +160,7 @@ def load_config():
     except KeyError:
         token = input("Token > ")
         if os.name == "nt":
-            meme_paths_raw = [os.path.join(os.path.expanduser("~"), "Pictures", "Memes"), os.path.join(cwd, "Memes")]
+            meme_paths_raw = [os.path.join(os.path.expanduser("~"), "Pictures", "Memes"), os.path.join(cwd, "memes")]
         file_types = ["jpg", "jpeg", "png", "gif", "tiff"]
 
     # Filter out meme paths that do not exists
