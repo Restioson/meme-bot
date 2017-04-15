@@ -30,7 +30,8 @@ async def on_ready():
     print("Starting ...")
 
     # Change game
-    await client.change_presence(game=discord.Game(name="with spicy memes"))
+    #await client.change_presence(game=discord.Game(name="with spicy memes"))
+    #TODO load game to play from json config
 
     # Print
     print("Started")
@@ -83,7 +84,10 @@ async def on_message(message: discord.Message):
             print("No matching memes")
 
         # Delete command message
-        await client.delete_message(message)
+        try:
+            await client.delete_message(message)
+        except discord.errors.NotFound:
+            pass
 
         # Print
         print("... meme successfully sent!")
