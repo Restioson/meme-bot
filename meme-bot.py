@@ -77,6 +77,8 @@ async def on_message(message: discord.Message):
                 await client.send_file(message.channel, matching[0][0])
             except discord.errors.HTTPException:
                 print("ERROR: File", matching[0][0].split(os.path.sep), "is too large!")
+            except discord.errors.Forbidden:
+                print("ERROR: No permission to upload files. Check with server admins if you think this is an error")
         else:
             print("No matching memes")
 
