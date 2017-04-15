@@ -26,7 +26,7 @@ The bot will only work if it is running. You can set it up to start on startup i
 # Compatability
 This selfbot *should* be compatible on all OSes supporting Python 3.5 or later. However, Meme Bot will only auto-discover memes in `C:\Users\user\Pictures\Memes` on Windows.
 
-# Reporting a bug/issue
+# Reporting an issue
 To report a bug/issue, please add it to the [issue tracker](https://github.com/Restioson/meme-bot/issues). Please check to see if it hasn't already been reported *before* posting.
 
 # Contributing
@@ -41,3 +41,9 @@ There is a guide [here](https://www.reddit.com/r/discordapp/comments/5ncwpv/loca
 
 **How do I report a bug?**
 The [issue tracker](https://github.com/Restioson/meme-bot/issues).
+
+**I have a suggestion!**
+[Create an issue](https://github.com/Restioson/meme-bot/issues) with the [enhancement](https://github.com/Restioson/meme-bot/labels/enhancement) label.
+
+**How does [thing x] work?**
+Have you read this page? Have you checked the wiki? If the answer is yes to both, feel free to [create an issue](https://github.com/Restioson/meme-bot/issues/new) with the [question](https://github.com/Restioson/meme-bot/labels/question) tag.
