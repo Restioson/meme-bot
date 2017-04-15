@@ -104,7 +104,7 @@ async def on_message(message: discord.Message):
         print("... reloaded")
 
 
-# Check if matching meme
+# Calculate meme similarity score
 def meme_matches(query, meme_file_name):
 
     # Tokens
@@ -126,6 +126,7 @@ def meme_matches(query, meme_file_name):
     # Return similarity score
     return same / float(len(tokens_meme))
 
+
 # Reload config
 def load_config():
 
@@ -135,6 +136,7 @@ def load_config():
     global memes
     global meme_paths
     global file_types
+    global cwd
 
     # Set all variables to be loaded to default
     config = {}
@@ -160,7 +162,12 @@ def load_config():
     except KeyError:
         token = input("Token > ")
         if os.name == "nt":
-            meme_paths_raw = [os.path.join(os.path.expanduser("~"), "Pictures", "Memes"), os.path.join(cwd, "memes")]
+            meme_paths_raw = [os.path.join(os.path.expanduser("~"), "Pictures", "Memes"),
+                              os.path.join(cwd, "Memes"),
+                              os.path.join(cwd, "memes"),
+                              os.path.join(os.path.expanduser("~"), "pictures", "memes"),
+                              os.path.join(os.path.expanduser("~"), "memes"),
+                              os.path.join(os.path.expanduser("~"), "Memes")]
         file_types = ["jpg", "jpeg", "png", "gif", "tiff"]
 
     # Filter out meme paths that do not exists
@@ -189,6 +196,7 @@ def reload_config():
     global memes
     global meme_paths
     global file_types
+    global cwd
 
     # Set all variables to be loaded to default
     config = {}
@@ -211,7 +219,12 @@ def reload_config():
 
     except KeyError:
         if os.name == "nt":
-            meme_paths_raw = [os.path.join(os.path.expanduser("~"), "Pictures", "Memes"), os.path.join(cwd, "Memes")]
+            meme_paths_raw = [os.path.join(os.path.expanduser("~"), "Pictures", "Memes"),
+                                               os.path.join(cwd, "Memes"),
+                                               os.path.join(cwd, "memes"),
+                                               os.path.join(os.path.expanduser("~"), "pictures", "memes"),
+                                               os.path.join(os.path.expanduser("~"), "memes"),
+                                               os.path.join(os.path.expanduser("~"), "Memes")]
         file_types = ["jpg", "jpeg", "png", "gif", "tiff"]
 
     # Filter out meme paths that do not exists
