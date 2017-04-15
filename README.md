@@ -27,7 +27,10 @@ The bot will only work if it is running. You can set it up to start on startup i
 This selfbot *should* be compatible on all OSes supporting Python 3.5 or later. However, Meme Bot will only auto-discover memes in `C:\Users\user\Pictures\Memes` on Windows.
 
 # Reporting a bug/issue
-To report a bug/issue, please add it to the [issue tracker](https://github.com/Restioson/meme-bot/issues).
+To report a bug/issue, please add it to the [issue tracker](https://github.com/Restioson/meme-bot/issues). Please check to see if it hasn't already been reported *before* posting.
+
+# Contributing
+If you would like to contribute to this project, fork it, commit your changes, and submit a pull request.
 
 # FAQ
 **Help! What is a Discord user API token?**
