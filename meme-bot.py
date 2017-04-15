@@ -72,13 +72,19 @@ async def on_message(message: discord.Message):
 
         # Send first matching meme (if exists)
         if len(matching) > 0 and matching[0][1] != 0:
-            print("Sending meme", matching[0][0].split(os.path.sep)[-1])
-            await client.send_file(message.channel, matching[0][0])
+            print("Sending meme", matching[0][0].split(os.path.sep)[-1], "...")
+            try:
+                await client.send_file(message.channel, matching[0][0])
+            except discord.errors.HTTPException:
+                print("ERROR: File", matching[0][0].split(os.path.sep), "is too large!")
         else:
             print("No matching memes")
 
         # Delete command message
         await client.delete_message(message)
+
+        # Print
+        print("... meme successfully sent!")
 
     # Check command
     elif message.content.split(" ")[0] == "~reload":
@@ -212,12 +218,12 @@ def reload_config():
     except KeyError:
         if os.name == "nt":
             meme_paths_raw = [os.path.join(os.path.expanduser("~"), "Pictures", "Memes"),
-                                               os.path.join(cwd, "Memes"),
-                                               os.path.join(cwd, "memes"),
-                                               os.path.join(os.path.expanduser("~"), "pictures", "memes"),
-                                               os.path.join(os.path.expanduser("~"), "memes"),
-                                               os.path.join(os.path.expanduser("~"), "Memes")]
-        file_types = ["jpg", "jpeg", "png", "gif", "tiff", "gifv"]
+                              os.path.join(cwd, "Memes"),
+                              os.path.join(cwd, "memes"),
+                              os.path.join(os.path.expanduser("~"), "pictures", "memes"),
+                              os.path.join(os.path.expanduser("~"), "memes"),
+                              os.path.join(os.path.expanduser("~"), "Memes")]
+        file_types = ["jpg", "jpeg", "png", "gif", "tiff", "mp4"]
 
     # Filter out meme paths that do not exists
     meme_paths = [meme_path for meme_path in meme_paths_raw if os.path.isdir(meme_path)]
