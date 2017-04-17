@@ -6,6 +6,7 @@ import asyncio
 import os
 import itertools
 import json
+import traceback
 
 
 # Client
@@ -74,12 +75,13 @@ async def on_message(message: discord.Message):
         # Send first matching meme (if exists)
         if len(matching) > 0 and matching[0][1] != 0:
             print("Sending meme", matching[0][0].split(os.path.sep)[-1], "...")
+
             try:
                 await client.send_file(message.channel, matching[0][0])
-            except discord.errors.HTTPException:
-                print("ERROR: File", matching[0][0].split(os.path.sep), "is too large!")
-            except discord.errors.Forbidden:
-                print("ERROR: No permission to upload files. Check with server admins if you think this is an error")
+                print("... meme successfully sent!")
+            except:
+                print("Error sending", matching[0][0].split(os.path.sep)[-1], ":", traceback.format_exc())
+
         else:
             print("No matching memes")
 
@@ -88,9 +90,6 @@ async def on_message(message: discord.Message):
             await client.delete_message(message)
         except discord.errors.NotFound:
             pass
-
-        # Print
-        print("... meme successfully sent!")
 
     # Check command
     elif message.content.split(" ")[0] == "~reload":
@@ -128,7 +127,7 @@ def meme_matches(query, meme_file_name):
                 same += 1.0
 
     # Return similarity score
-    return same / float(len(tokens_meme))
+    return same
 
 
 # Reload config
