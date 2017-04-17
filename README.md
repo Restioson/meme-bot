@@ -20,8 +20,9 @@ All documentation can be found [here](https://github.com/Restioson/meme-bot/wiki
 6. Open a shell window
 7. `cd` to where the downloaded folder is
 8. Type `cd meme-bot-master` and press enter. Do this twice
-9. To run the bot, type in `python meme-bot.py`. 
-10. At the `Token > ` prompt, paste in your Discord user API 
+9. At this stage I reccommend that you cread the folder `path/to/home/directory/Pictures/Memes` and put all your memes in here
+10. To run the bot, type in `python meme-bot.py`. 
+11. At the `Token > ` prompt, paste in your Discord user API 
 
 The bot will only work if it is running. You can set it up to start on startup if you prefer, but this is outside the domain of this tutorial.
 
@@ -54,3 +55,7 @@ The [issue tracker](https://github.com/Restioson/meme-bot/issues).
 **How does [thing x] work?**
 
 Have you read this page? Have you checked the wiki? If the answer is yes to both, feel free to [create an issue](https://github.com/Restioson/meme-bot/issues/new) with the [question](https://github.com/Restioson/meme-bot/labels/question) tag.
+
+# Contact & Help
+
+Feel free to contact me on discord: Restioson#8323
