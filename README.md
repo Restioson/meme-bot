@@ -44,6 +44,14 @@ This is your secret string that you can use to let selfbots send messages and do
 
 There is a guide [here](https://www.reddit.com/r/discordapp/comments/5ncwpv/localstorage_missing/dcalpi1/). Thank you to [/u/DJScias](https://www.reddit.com/user/DJScias) for this wonderul short tutorial.
 
+**How do I add a meme folder?**
+
+In future I will add a command to do this. You need to open your `config.json`, which will be in the same folder as Meme-Bot. It will look something like this:
+```json
+{"token":"someuntintelligblething","meme_directories"=["path/to/memes","path/to/memes2",...],"file_types"=["jpg","png"...]}
+```
+Find the bit which says `"meme_directories=["path/to/memes",...]`. Just before the `]` bracket, put a comma, then a quotation mark. Now, type the directory you want to add. Type another quotation mark and save the file.
+
 **How do I report a bug?**
 
 The [issue tracker](https://github.com/Restioson/meme-bot/issues).
