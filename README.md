@@ -100,6 +100,9 @@ The [issue tracker](https://github.com/Restioson/meme-bot/issues).
 
 Have you read this page? Have you checked the wiki? If the answer is yes to both, feel free to [create an issue](https://github.com/Restioson/meme-bot/issues/new) with the [question](https://github.com/Restioson/meme-bot/labels/question) tag.
 
+# Special Thanks
+Special thanks to MegaMeltdown for helping with the docs and testing the bot!
+
 # Contact & Help
 
 Feel free to contact me on discord: Restioson#8323
