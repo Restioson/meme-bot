@@ -65,22 +65,22 @@ async def on_message(message: discord.Message):
         meme = " ".join(message.content.split(" ")[1:])
 
         # Find matching memes
-        matching = [(meme_file_path, meme_matches(meme.replace("_", " "), meme_file_path.split(os.path.sep)[-1]))
-                    for meme_file_path in memes]
+        matching = [(meme_file_path, meme_matches(meme.replace("_", " "), meme_file_path.split(os.path.sep)[-1]), meme_file_path.split(os.path.sep)[-1])
+                    for meme_file_path in memes if meme_matches(meme.replace("_", " "), meme_file_path.split(os.path.sep)[-1]) > 0]
 
         # Sort matching
         matching.sort(key=lambda x: x[1])
         matching.reverse()
 
-        # Send first matching meme (if exists)
-        if len(matching) > 0 and matching[0][1] != 0:
-            print("Sending meme", matching[0][0].split(os.path.sep)[-1], "...")
+        # Send best matching meme (if exists)
+        if len(matching) > 0:
+            print("Sending meme", matching[0][2], "...")
 
             try:
                 await client.send_file(message.channel, matching[0][0])
                 print("... meme successfully sent!")
             except:
-                print("Error sending", matching[0][0].split(os.path.sep)[-1], ":", traceback.format_exc())
+                print("Error sending", matching[0][2], ":", traceback.format_exc())
 
         else:
             print("No matching memes")
@@ -122,7 +122,7 @@ def meme_matches(query, meme_file_name):
 
         for token_meme in tokens_meme:
 
-            if token_query == token_meme:
+            if token_query.lower() == token_meme.lower():
 
                 same += 1.0
 
