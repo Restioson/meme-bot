@@ -30,8 +30,6 @@ async def on_ready():
     # Print start
     print("Starting ...")
 
-    # Change game
-    #await client.change_presence(game=discord.Game(name="with spicy memes"))
     #TODO load game to play from json config
 
     # Print
@@ -65,8 +63,10 @@ async def on_message(message: discord.Message):
         meme = " ".join(message.content.split(" ")[1:])
 
         # Find matching memes
-        matching = [(meme_file_path, meme_matches(meme.replace("_", " "), meme_file_path.split(os.path.sep)[-1]), meme_file_path.split(os.path.sep)[-1])
-                    for meme_file_path in memes if meme_matches(meme.replace("_", " "), meme_file_path.split(os.path.sep)[-1]) > 0]
+        matching = [(meme_file_path, meme_matches(meme.replace("_", " "), meme_file_path.split(os.path.sep)[-1]),
+                     meme_file_path.split(os.path.sep)[-1])
+                    for meme_file_path in memes if
+                    meme_matches(meme.replace("_", " "), meme_file_path.split(os.path.sep)[-1]) > 0]
 
         # Sort matching
         matching.sort(key=lambda x: x[1])
@@ -106,6 +106,35 @@ async def on_message(message: discord.Message):
         # Print
         print("... reloaded")
 
+    # Check command
+    elif message.content.split(" ")[0] == "~addmemefolder":
+
+        # Check length of args
+        if len(message.content.split(" ")) > 1:
+
+            # Check if directory exists
+            if os.path.isdir(" ".join(message.content.split(" ")[1:])):
+
+                # Add meme directory
+                meme_paths.append(" ".join(message.content.split(" ")[1:]))
+
+                # Save config
+                save_config()
+
+                # Reload
+                reload_config()
+
+                # Print
+                print("Meme folder", " ".join(message.content.split(" ")[1:]), "has been successfully added!")
+
+            # Doesn't exist
+            else:
+
+                print("Meme folder", " ".join(message.content.split(" ")[1:]), "does not exist!")
+
+        # Delete command message
+        await client.delete_message(message)
+
 
 # Calculate meme similarity score
 def meme_matches(query, meme_file_name):
@@ -128,6 +157,24 @@ def meme_matches(query, meme_file_name):
 
     # Return similarity score
     return same
+
+
+# Save config
+def save_config():
+
+    # Globals
+    global config
+    global token
+    global memes
+    global meme_paths
+    global file_types
+    global cwd
+
+    # Save config file
+    config["token"] = token
+    config["meme_directories"] = meme_paths
+    config["file_types"] = file_types
+    json.dump(config, open(os.path.join(cwd, "config.json"), "w"))
 
 
 # Reload config
@@ -185,10 +232,7 @@ def load_config():
                       if file_name.split(".")[-1] in file_types])
 
     # Save config file
-    config["token"] = token
-    config["meme_directories"] = meme_paths
-    config["file_types"] = file_types
-    json.dump(config, open(os.path.join(cwd, "config.json"), "w"))
+    save_config()
 
 
 # Reload config
@@ -242,10 +286,8 @@ def reload_config():
                       if file_name.split(".")[-1] in file_types])
 
     # Save config file
-    config["token"] = token
-    config["meme_directories"] = meme_paths
-    config["file_types"] = file_types
-    json.dump(config, open(os.path.join(cwd, "config.json"), "w"))
+    save_config()
+
 
 # Load config
 load_config()
