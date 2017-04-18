@@ -24,7 +24,7 @@ For a more advanced guide, refer to the [wiki](https://github.com/Restioson/meme
 Note: The bot will only work if it is running. You can set it up to start on startup if you prefer, but this is outside the domain of this tutorial.
 
 # Compatability
-This selfbot *should* be compatible on all OSes supporting Python 3.5 or later. However, Meme Bot will only auto-discover memes in `C:\Users\user\Pictures\Memes` on Windows.
+This selfbot *should* be compatible on all OSes supporting Python 3.5 or later.
 
 # Reporting an issue
 To report a bug/issue, please add it to the [issue tracker](https://github.com/Restioson/meme-bot/issues). Please check to see if it hasn't already been reported *before* posting.
