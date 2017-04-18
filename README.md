@@ -40,6 +40,8 @@ All documentation can be found [here](https://github.com/Restioson/meme-bot/wiki
 
 - Find the section which says something like `"meme_directories": ["C:\\..."`. Just *before* the closing `]`, type `,"C:\\Path\\To\\Memes"`. Replace `C:\\Path\\To\\Memes` with whichever folder you want to add. **NOTE: replace all your normal backslashes with *double* backslashes or *this will not work*. You will get a *Unicode error***
 
+- If you have already added, for example, `C:\\Users\\Username\\Downloads\\`, you *do not* have to add any folder within this folder, as it will *look there for you*. So, if you have `C:\\Users\\Username\\Downloads\\Memes`, this is *already covered* by `C:\\Users\\Username\\Downloads`
+
 ## Linux
 I am going to assume that you are fairly profficient in computers. I will write a better guide when I get the chance, but for now, here it is:
 
@@ -59,6 +61,7 @@ I am going to assume that you are fairly profficient in computers. I will write 
 
 - To add a new meme directory, add it to the `config.json` which is generated on first run, under `meme_directories`
 
+- It will auto-discover memes in subdirs of directories defined here
 
 The bot will only work if it is running. You can set it up to start on startup if you prefer, but this is outside the domain of this tutorial.
 
@@ -99,6 +102,9 @@ The [issue tracker](https://github.com/Restioson/meme-bot/issues).
 **How does [thing x] work?**
 
 Have you read this page? Have you checked the wiki? If the answer is yes to both, feel free to [create an issue](https://github.com/Restioson/meme-bot/issues/new) with the [question](https://github.com/Restioson/meme-bot/labels/question) tag.
+
+# Special Thanks
+Special thanks to MegaMeltdown for helping with the docs and testing the bot!
 
 # Contact & Help
 
