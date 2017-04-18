@@ -1,4 +1,7 @@
 # Meme Bot
+
+[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg)]()
+
 This selfbot allows you to send memes and files from your computer via discord, with a simple command.
 
 # Documentation
