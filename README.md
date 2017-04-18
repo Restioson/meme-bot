@@ -14,8 +14,8 @@ Imgur album: http://imgur.com/gallery/B5Qfu.
 # Installation
 
 ## Windows
-[Installing](http://imgur.com/a/lBDeS)
-[Using](http://imgur.com/gallery/B5Qfu)
+- [Installing](http://imgur.com/a/lBDeS)
+- [Using](http://imgur.com/gallery/B5Qfu)
 
 The bot will only work if it is running. You can set it up to start on startup if you prefer, but this is outside the domain of this tutorial.
 
