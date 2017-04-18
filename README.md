@@ -13,11 +13,15 @@ Imgur album: http://imgur.com/gallery/B5Qfu.
 
 # Installation
 
-## Windows
-- [Installing](http://imgur.com/a/lBDeS)
-- [Using](http://imgur.com/gallery/B5Qfu)
+Refer to the [wiki](https://github.com/Restioson/meme-bot/wiki/Installation).
 
-The bot will only work if it is running. You can set it up to start on startup if you prefer, but this is outside the domain of this tutorial.
+# Usage
+
+Quick guide: http://imgur.com/gallery/B5Qfu
+
+For a more advanced guide, refer to the [wiki](https://github.com/Restioson/meme-bot/wiki/Commands).
+
+Note: The bot will only work if it is running. You can set it up to start on startup if you prefer, but this is outside the domain of this tutorial.
 
 # Compatability
 This selfbot *should* be compatible on all OSes supporting Python 3.5 or later. However, Meme Bot will only auto-discover memes in `C:\Users\user\Pictures\Memes` on Windows.
@@ -39,11 +43,7 @@ There is a guide [here](https://www.reddit.com/r/discordapp/comments/5ncwpv/loca
 
 **How do I add a meme folder?**
 
-In future I will add a command to do this. You need to open your `config.json`, which will be in the same folder as Meme-Bot. It will look something like this:
-```json
-{"token":"someuntintelligblething","meme_directories"=["path/to/memes","path/to/memes2",...],"file_types"=["jpg","png"...]}
-```
-Find the bit which says `"meme_directories=["path/to/memes",...]`. Just before the `]` bracket, put a comma, then a quotation mark. Now, type the directory you want to add. Type another quotation mark and save the file.
+In discord, type in `~addmemefolder C:\Path\To\Memes` under Windows, or `~addmemefolder /path/to/memes` under Mac/Linux/Other *nix.
 
 **How do I report a bug?**
 
