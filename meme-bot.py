@@ -218,7 +218,7 @@ def load_config():
                               os.path.join(os.path.expanduser("~"), "pictures", "memes"),
                               os.path.join(os.path.expanduser("~"), "memes"),
                               os.path.join(os.path.expanduser("~"), "Memes")]
-        file_types = ["jpg", "jpeg", "png", "gif", "tiff", "gifv"]
+        file_types = ["jpg", "jpeg", "png", "gif", "tiff", "bmp"]
 
     # Filter out meme paths that do not exists
     meme_paths = [meme_path for meme_path in meme_paths_raw if os.path.isdir(meme_path)]
