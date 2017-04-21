@@ -36,7 +36,7 @@ To report a bug/issue, please add it to the [issue tracker](https://github.com/R
 If you would like to contribute to this project, fork it, commit your changes, and submit a pull request.
 
 # FAQ
-** Help! I have a problem**
+**Help! I have a problem**
 
 Have you:
 1. Read the [wiki](https://github.com/Restioson/meme-bot/wiki/Commands)
