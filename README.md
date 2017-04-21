@@ -57,7 +57,7 @@ There is a guide [here](https://www.reddit.com/r/discordapp/comments/5ncwpv/loca
 
 In discord, type in `~addmemefolder C:\Path\To\Memes` under Windows, or `~addmemefolder /path/to/memes` under Mac/Linux/Other *nix.
 
-**My meme isn't showing up or sending! **
+**My meme isn't showing up or sending!**
 
 1. Make sure that you named it something with keywords in the filename
 2. Make sure that you didn't add the file extension in the `~meme` command
