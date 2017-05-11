@@ -36,7 +36,7 @@ To report a bug/issue, please add it to the [issue tracker](https://github.com/R
 If you would like to contribute to this project, fork it, commit your changes, and submit a pull request.
 
 # FAQ
-** Help! I have a problem**
+**Help! I have a problem**
 
 Have you:
 1. Read the [wiki](https://github.com/Restioson/meme-bot/wiki/Commands)
@@ -57,7 +57,8 @@ There is a guide [here](https://www.reddit.com/r/discordapp/comments/5ncwpv/loca
 
 In discord, type in `~addmemefolder C:\Path\To\Memes` under Windows, or `~addmemefolder /path/to/memes` under Mac/Linux/Other *nix.
 
-** My meme isn't showing up or sending! **
+**My meme isn't showing up or sending!**
+
 1. Make sure that you named it something with keywords in the filename
 2. Make sure that you didn't add the file extension in the `~meme` command
 3. If it's a new meme, try typing `~reload` and trying again
