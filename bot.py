@@ -9,11 +9,13 @@ import glob
 import collections
 import string
 import unidecode
+import typing
 
 NUMBERS = ["zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"]
+VOWELS = ["a", "e", "i", "o", "u"]
 
 
-def emojify(text):
+def emojify(text: str) -> str:
     """Converts text to regional indicators for use in discord"""
 
     emojified = ""
@@ -37,8 +39,20 @@ def emojify(text):
     return emojified
 
 
+def bify(text: str) -> str:
+    """Converts all first letters of words to :b: if they are consonants"""
+
+    bified = ""
+
+    for word in text.split(" "):
+
+        bified += ":b:" + word[1:] + " " if word[0].lower() not in VOWELS else word + " "
+
+    return bified
+
+
 # Calculate filename similarity score
-def filename_matches(keywords, filename):
+def filename_matches(keywords: typing.Iterable[str], filename: str) -> int:
     """Checks if keywords match filename and returns how many times it matched"""
 
     # Tokens
@@ -135,6 +149,9 @@ class SelfBot(discord.Client):
 
         elif command == "emojify":
             await self.command_emojify(message)
+
+        elif command == "b":
+            await self.command_b(message)
 
         elif command == "reload":
             await self.command_reload()
@@ -259,8 +276,16 @@ class SelfBot(discord.Client):
         Edits original message
         """
 
-        print("Emojifying ...") # TODO make gui alert
+        print("Emojifying ...")  # TODO make gui alert
         await self.edit_message(message, emojify(message.content.replace("~emojify ", "", 1)))
+
+    async def command_b(self, message: discord.Message):
+        """Converts all first letters of words to :b: if they are consonants
+        Edits original message"""
+
+        print("Get ready for the :b:")  # TODO make gui alert
+        await self.edit_message(message, bify(message.content.replace("~b ", "", 1)))
+
 
     async def command_reload(self):
         """Reloads config and rediscovers memes in folders"""
